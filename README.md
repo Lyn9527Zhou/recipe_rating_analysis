@@ -38,4 +38,20 @@ After merging the two dataframes, we find one important data is the rating for t
 
 #### Checking Data types
 Then, I check the data type for each column and think about the necessary data cleaning steps.
+![alt text](pic/datatype.png)
 
+#### Converting `nutrition` column to List and Assign individual Columns
+1. I applied `lambda x: eval(x)` on `nutrition` and `tags` columns to convert them from list like string columns into actual list columns.
+2. Then I applied `lambda x: x[i]` on the `nutrition` column and assign them to different individual nutritions.
+
+#### Dealing with outlier
+I find there are lots of outliers in our dataset. Therefore, I decide to define a function called `outlier` that help me filter out the outliers that is out of the 99th percentile of the dataset. I perform this filter on all the numerical columns and filter all the Nan values caused by this to prevent effect on missingness analysis.
+```
+def outlier(series):
+    percentile_99 = series.quantile(0.99)
+    return series[series <= percentile_99]
+```
+
+### Exploratory Data Analysis
+#### Univariate Analysis
+In the univariate analysis, I would analyze the distribution of average rating and the distribution of calories

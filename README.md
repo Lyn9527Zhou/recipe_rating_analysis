@@ -31,4 +31,11 @@ This research question could be important for recipe-designers and food.com webs
 
 ### Data Cleaning 
 #### Merging two dataframe
-First I follow the instructions and merge the two dataframe.
+First I follow the instructions and merge the two dataframe. Since there are two dataframe but with common column, which are id and recipe_id. As a result, we merge the two dataframe together to show the recipes and corresponding rating and reviews.
+
+#### Adding average rating column
+After merging the two dataframes, we find one important data is the rating for the recipes. As a result, we add new column name ave_rating, which include the average rating for the column. Also, we beleve that the 0 in the rating might be empty rating that people do not fill in. As a result, we replace 0 with nan value
+
+#### Checking Data types
+Then, I check the data type for each column and think about the necessary data cleaning steps.
+

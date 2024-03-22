@@ -487,7 +487,7 @@ Then I create a new dataframe `results` that has `is_vegan`, `is_high`, and `pre
 `obs = results.groupby('is_vegan').apply(compute_f1).diff().iloc[-1]` I obtain my observation stats equal to `-0.008526582305602992`
 
 <iframe
-  src="assets/fair.html"
+  src="pic/fair.html"
   width="800"
   height="600"
   frameborder="0"
